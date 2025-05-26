@@ -94,5 +94,41 @@ namespace CDTControl
             }
             return true;
         }
+        public bool  SendMail1(string email, string Content, string SubText)
+        {
+            try
+            {
+                var fromAddress = new MailAddress("bpmsent@piriou.vn", "Piriou Mail Bot");
+                var toAddress = new MailAddress(email);
+
+
+                // Cấu hình SMTP client
+                var smtp = new SmtpClient
+                {
+                    Host = Host,// "mail10378.maychuemail.com", // Hoặc dùng IP 222.255.103.78
+                    Port = 465,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, Password)
+                };
+
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = SubText,
+                    Body = Content
+                })
+                {
+                    smtp.Send(message);
+                    Console.WriteLine("Email sent successfully to " + email);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error sending email: " + ex.Message);
+                return false;
+            }
+        }
     }
 }

@@ -280,6 +280,7 @@ namespace CusAccounting
             this.gridColumn31});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView2.OptionsView.EnableAppearanceOddRow = true;

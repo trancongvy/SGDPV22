@@ -159,8 +159,26 @@ namespace CusAccounting
             gridControl1.DataSource = bs;
             gridControl2.DataSource = bs;
             gridControl2.DataMember = tbDT.TableName;// ds.Relations[0].RelationName;
-
+            tbMT.ColumnChanged += TbMT_ColumnChanged;
         }
+
+        private void TbMT_ColumnChanged(object sender, DataColumnChangeEventArgs e)
+        {
+            if(e.Column.ColumnName== "MaHTTT" && dbdmHTTT!=null &&dbdmHTTT.DsData!=null)
+            {
+                DataTable tbHTTT = dbdmHTTT.DsData.Tables[0];
+                if (tbHTTT.Columns.Contains("TkNo"))
+                {
+                    DataRow[] ldrHttt = tbHTTT.Select("MaHTTT='" + e.Row[e.Column].ToString() + "'");
+                    if(ldrHttt.Length>0)
+                    {
+                        e.Row["TKNo"] = ldrHttt[0]["TkNo"];
+                        e.Row.EndEdit();
+                    }
+                }
+            }
+        }
+
         string[] lstid = new string[] { };
 
         private void CreateData1page(MInvoiceList mInvoiceList)
@@ -196,7 +214,7 @@ namespace CusAccounting
                         foreach (HHDVu_Minv HHDV_minv in inv.hdhhdvu)
                         {
                             if (HHDV_minv.tchat == "4") continue;
-                            if (firstRow == 0) { drMT["DienGiai"] = HHDV_minv.ten; firstRow++; }
+                            if (firstRow == 0) { drMT["DienGiai"] = HHDV_minv.ten.ToString().Replace("\n", " "); firstRow++; }
 
                             DataRow drDT = tbDT.NewRow();
                             tbDT.Rows.Add(CreateDTRow(drMT, drDT, HHDV_minv));
@@ -229,7 +247,7 @@ namespace CusAccounting
                 drMT["Ngayhd"] = DateTime.Parse(hd.nky.ToString()).Date;
             drMT["Sohoadon"] ="00000000".Substring(0,8- hd.shdon.ToString().Length) + hd.shdon.ToString();
             drMT["Kyhieu"] = hd.khhdon;
-            drMT["HTTToan"] = hd.thtttoan;
+            drMT["HTTToan"] = hd.thtttoan==null?"TM/CK":hd.thtttoan;
             drMT["TenKH"] = hd.nmten;
             drMT["MST"] = hd.nmmst;
             
@@ -273,7 +291,7 @@ namespace CusAccounting
             drDT["Sohoadon"] = drMT["Sohoadon"];
             drDT["MTIDDT"] =hh.id;
             drDT["MaKho"] = geMaKho.EditValue.ToString();
-            drDT["TenVT"] = hh.ten;
+            drDT["TenVT"] = hh.ten.Replace("\n", " ");
             drDT["DVT"] = hh.dvtinh;
             if (hh.sluong == null) drDT["Soluong"] = 0;
             else drDT["Soluong"] = hh.sluong;
@@ -712,38 +730,38 @@ namespace CusAccounting
             foreach (DataRow drMT in tbMT.Rows)
             {
                 //Tìm kiếm chính xác và trong từ điển trước
-                DataRow[] lstRows = dbdmHTTT.DsData.Tables[0].Select("TenHTTT='" + drMT["HTTToan"].ToString() + "'");
-                if (lstRows.Length > 0)
-                {
-                    drMT["MaHTTT"] = lstRows[0]["MaHTTT"];
-                    if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "TM")
-                    {
-                        drMT["TkNo"] = "1111";                       
-                    }
-                    else if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "CK")
-                    {
-                        drMT["TkNo"] = "131";                      
-                    }
-                    drMT.EndEdit();
-                    continue;
-                }
-                else
-                {
-                    lstRows = DictionaryName.DsData.Tables[0].Select("Name='" + drMT["HTTToan"].ToString() + "' and TableName='dmHTTT'");
-                    if (lstRows.Length > 0)
-                    {
-                        drMT["MaHTTT"] = lstRows[0]["Code"];
-                        if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "TM")
-                        {
-                            drMT["TkNo"] = "1111";
-                        }
-                        else if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "CK")
-                        {
-                            drMT["TkNo"] = "131";
-                        }
-                        continue;
-                    }
-                }
+                //DataRow[] lstRows = dbdmHTTT.DsData.Tables[0].Select("TenHTTT='" + drMT["HTTToan"].ToString() + "'");
+                //if (lstRows.Length > 0)
+                //{
+                //    drMT["MaHTTT"] = lstRows[0]["MaHTTT"];
+                //    if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "TM")
+                //    {
+                //        drMT["TkNo"] = "1111";                       
+                //    }
+                //    else if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "CK")
+                //    {
+                //        drMT["TkNo"] = "131";                      
+                //    }
+                //    drMT.EndEdit();
+                //    continue;
+                //}
+                //else
+                //{
+                //    lstRows = DictionaryName.DsData.Tables[0].Select("Name='" + drMT["HTTToan"].ToString() + "' and TableName='dmHTTT'");
+                //    if (lstRows.Length > 0)
+                //    {
+                //        drMT["MaHTTT"] = lstRows[0]["Code"];
+                //        if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "TM")
+                //        {
+                //            drMT["TkNo"] = "1111";
+                //        }
+                //        else if (drMT["MaHTTT"] != DBNull.Value && drMT["MaHTTT"].ToString() == "CK")
+                //        {
+                //            drMT["TkNo"] = "131";
+                //        }
+                //        continue;
+                //    }
+                //}
 
 
                 int i = ThietKedulieu.BestMaxIndex(arrHTTT, drMT["HTTToan"].ToString());
@@ -891,7 +909,7 @@ namespace CusAccounting
             double dic1;
             string TenVT = drDT["TenVT"].ToString().ToLower();
 
-            if (TenVT == "AQUAFINA SODA LON 320x24".ToLower())
+            if (TenVT == "Lẩu thập cẩm (lớn)".ToLower())
             {
 
             }

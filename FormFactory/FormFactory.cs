@@ -95,9 +95,9 @@ namespace FormFactory
         private void AddICDTData(CDTData Data)
         {
             if (Config.GetValue("DuongDanPlugins") != null)
-                _pluginPath = Config.GetValue("DuongDanPlugins").ToString() + "\\" + Config.GetValue("Package").ToString() + "\\";
+                _pluginPath = Config.GetValue("DuongDanPlugins").ToString() + "\\" + Config.GetValue("DbName").ToString() + "\\";
             else
-                _pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins\\" + Config.GetValue("Package").ToString() + "\\";
+                _pluginPath = System.Windows.Forms.Application.StartupPath + "\\Plugins\\" + Config.GetValue("DbName").ToString() + "\\";
 
             if (!Directory.Exists(_pluginPath))
                 return;

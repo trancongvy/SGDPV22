@@ -434,7 +434,7 @@
       <Name>DataFactory</Name>
     </ProjectReference>
     <ProjectReference Include="..\DesignWorkflow\DesignWorkflow.csproj">
-      <Project>{8E505B22-96F0-4085-A510-5BE535DD4D4B}</Project>
+      <Project>{8e505b22-96f0-4085-a510-5be535dd4d4b}</Project>
       <Name>DesignWorkflow</Name>
     </ProjectReference>
     <ProjectReference Include="..\DevControls\DevControls.csproj">

@@ -131,6 +131,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -265,6 +266,8 @@
       <DependentUpon>fThanhtoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportDataFromDat.cs" />
+    <Compile Include="LoginMinvoice.cs" />
+    <Compile Include="MInvoiceInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

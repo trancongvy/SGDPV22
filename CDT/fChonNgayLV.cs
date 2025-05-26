@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CDTLib;
+using CBSControls;
 namespace CDT
 {
     public partial class fChonNgayLV : DevExpress.XtraEditors.XtraForm

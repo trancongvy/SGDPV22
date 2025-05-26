@@ -39,6 +39,7 @@ namespace CDTSystem
                 try
                 { if (k.Substring(0, 3) == "CBA")
                     {
+                        if (key.GetValue("CompanyName") == null) continue;
                         string CompanyName = key.GetValue("CompanyName").ToString();
                         tb.Text = CompanyName + ", Dữ liệu: " + k;
                         tb.ToolTip = k;
