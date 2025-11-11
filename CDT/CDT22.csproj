@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A48C0424-B640-40F9-9F72-9D96667B6160}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDT</RootNamespace>
+    <AssemblyName>CDT22</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>logo48.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CBSControls, Version=1.0.7214.26441, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CBAPV22\CBSControls\bin\Debug\CBSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v22.2.Export, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v22.2.Design, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Fomula, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Fomula.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\CBAPV\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fChonNgayLV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChonNgayLV.Designer.cs">
+      <DependentUpon>fChonNgayLV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRestoreAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRestoreAs.Designer.cs">
+      <DependentUpon>FrmRestoreAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNotify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNotify.Designer.cs">
+      <DependentUpon>fNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDateSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDateSelect.Designer.cs">
+      <DependentUpon>FrmDateSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTaskList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTaskList.Designer.cs">
+      <DependentUpon>fTaskList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fChonNgayLV.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fChonNgayLV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRestoreAs.resx">
+      <DependentUpon>FrmRestoreAs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNotify.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fNotify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDateSelect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmDateSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTaskList.resx">
+      <DependentUpon>fTaskList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xoasolieu.resx">
+      <DependentUpon>Xoasolieu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="publicClass.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Xoasolieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDTControl\CDTControl.csproj">
+      <Project>{8eeecdac-1392-4262-a698-b5be74adcf72}</Project>
+      <Name>CDTControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDTDatabase\CDTDatabase.csproj">
+      <Project>{9bbdb6c7-70f8-4805-bb51-445551e282c5}</Project>
+      <Name>CDTDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDTLib\CDTLib.csproj">
+      <Project>{cf282973-8899-4c28-8286-71155cbe9c3a}</Project>
+      <Name>CDTLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDTSystem\CDTSystem.csproj">
+      <Project>{15e11060-c873-4207-a081-c5d2db94c203}</Project>
+      <Name>CDTSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CusAccounting\CusAccounting.csproj">
+      <Project>{49531ebd-d862-462a-9f23-a1d2a00a305b}</Project>
+      <Name>CusAccounting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CusCDTData\CusCDTData.csproj">
+      <Project>{6eafce2a-4df1-40b3-be77-0195539c8a92}</Project>
+      <Name>CusCDTData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CusCRM\CusCRM.csproj">
+      <Project>{87a42332-9553-4725-8810-ac46a747aceb}</Project>
+      <Name>CusCRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CusPOS\CusPOS.csproj">
+      <Project>{058428fe-fa9f-4ecc-8ccf-012944d30806}</Project>
+      <Name>CusPOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataFactory\DataFactory.csproj">
+      <Project>{91c9ebb2-abaa-4abe-a659-69e2208bf10e}</Project>
+      <Name>DataFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataMaintain\DataMaintain.csproj">
+      <Project>{867eb03b-cf1b-4590-8f71-343e259af6c1}</Project>
+      <Name>DataMaintain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignWorkflow\DesignWorkflow.csproj">
+      <Project>{8e505b22-96f0-4085-a510-5be535dd4d4b}</Project>
+      <Name>DesignWorkflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DevControls\DevControls.csproj">
+      <Project>{4983ac7a-6df3-4f84-951f-5589b56c4ac5}</Project>
+      <Name>DevControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorManager\ErrorManager.csproj">
+      <Project>{87726715-c19d-44ad-9ca0-90097d40eb39}</Project>
+      <Name>ErrorManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormFactory\FormFactory.csproj">
+      <Project>{1a72f659-c361-4fd3-abe8-ef03b6f33a78}</Project>
+      <Name>FormFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Plugins.csproj">
+      <Project>{afa2f1d0-b84b-406a-99d3-9ada58dbffcd}</Project>
+      <Name>Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportFactory\ReportFactory.csproj">
+      <Project>{c409fccf-bb0c-4df2-960f-b26b3cf2d7e0}</Project>
+      <Name>ReportFactory</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo48.ico" />
+    <Content Include="ToastTemp.xml" />
+    <None Include="Resources\BGRKetoan4.png" />
+    <None Include="Resources\PanelSGD1.png" />
+    <None Include="Resources\button_reload_01.ico" />
+    <None Include="Resources\Clock.ico" />
+    <None Include="Resources\delete.ico" />
+    <None Include="Resources\1 %2829%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

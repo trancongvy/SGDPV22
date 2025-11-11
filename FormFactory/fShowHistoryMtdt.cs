@@ -1,13 +1,16 @@
+using CDTControl;
+using CDTDatabase;
+using DataFactory;
+using DevExpress.XtraEditors;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using CDTDatabase;
-using DataFactory;
 namespace FormFactory
 {
     public partial class fShowHistoryMtdt : DevExpress.XtraEditors.XtraForm
@@ -50,14 +53,20 @@ namespace FormFactory
 
             }
             idlist =idlist.Substring(0,idlist.Length-1) + ")";
-            sql = "select a.*, b.UserName from sysHistory a inner join sysuser b on a.sysUserID=b.sysUserID where a.sysTableID=" + _Data.DrTable["sysTableID"].ToString() + " and (pkValue in " + idlist + " or MtPkValue='" + _Data.DrCurrentMaster[_Data.PkMaster.FieldName] + "')   order by a.hDatetime";
+            if (_Data.LstDrCurrentDetails.Count==0)
+                sql= "select a.*, b.UserName from sysHistory a inner join sysuser b on a.sysUserID = b.sysUserID where a.sysTableID = " + _Data.DrTable["sysTableID"].ToString() + " and (MtPkValue = '" + _Data.DrCurrentMaster[_Data.PkMaster.FieldName] + "')   order by a.hDatetime";
+                    else
+                sql = "select a.*, b.UserName from sysHistory a inner join sysuser b on a.sysUserID=b.sysUserID where a.sysTableID=" + _Data.DrTable["sysTableID"].ToString() + " and (pkValue in " + idlist + " or MtPkValue='" + _Data.DrCurrentMaster[_Data.PkMaster.FieldName] + "')   order by a.hDatetime";
             DataTable tbDt = _dbData.GetDataTable(sql);
             DataSet dbSetDt=new DataSet();
             if (tbDt != null) dbSetDt.Tables.Add(tbDt);
             else return;
             tbDt.PrimaryKey = new DataColumn[] { tbDt.Columns["sysHistoryID"] };
             sql = "select a.*, c.FieldName,c.LabelName from sysHistoryDt a inner join sysHistory b on a.sysHistoryID =b.sysHistoryID inner join sysField c on a.sysFieldID=c.sysFieldID where ";
-            sql += " a.sysHistoryID in (select sysHistoryID from sysHistory where  sysTableID=" + _Data.DrTable["sysTableID"].ToString() + " and (pkValue in " + idlist + " or MtPkValue='" + _Data.DrCurrentMaster[_Data.PkMaster.FieldName] + "')) order by b.hDatetime";
+            if (_Data.LstDrCurrentDetails.Count == 0)
+            sql+= " a.sysHistoryID in (select sysHistoryID from sysHistory where  sysTableID=" + _Data.DrTable["sysTableID"].ToString() + " and ( MtPkValue='" + _Data.DrCurrentMaster[_Data.PkMaster.FieldName] + "')) order by b.hDatetime";
+            else
+                sql += " a.sysHistoryID in (select sysHistoryID from sysHistory where  sysTableID=" + _Data.DrTable["sysTableID"].ToString() + " and (pkValue in " + idlist + " or MtPkValue='" + _Data.DrCurrentMaster[_Data.PkMaster.FieldName] + "')) order by b.hDatetime";
             DataTable tbDt1 = _dbData.GetDataTable(sql);
             if (tbDt1 != null) dbSetDt.Tables.Add(tbDt1);
             tbDt.TableName = "Master";

@@ -121,8 +121,8 @@ namespace CDTSystem
         private string UpdateSql(string tableName, DataRow RowData)
         {
             string sql = "Update " + tableName + " set ";
-            string where="";
-            string note="";
+            string where = "";
+            string note = "";
 
             foreach (DataRow dr in MapStruct.Rows)
             {
@@ -134,21 +134,30 @@ namespace CDTSystem
 
                 if (Type == 0 || Type == 3 || Type == 6)
                 {
-                    note=getnote(dr["Type"].ToString());
+                    note = getnote(dr["Type"].ToString());
                     where = " where " + PkName + " =" + (chars.Contains(Type) ? "N" : "") + note + RowData[PkValueName] + note;
                     continue;
                 }
                 if (dr["fieldName"].ToString() != string.Empty && dr["ColName"] != DBNull.Value && dr["ColName"].ToString() != string.Empty)
                 {
-                    if (RowData[dr["ColName"].ToString()].ToString() == "" && note == "")
-                        continue;
+                    string value = RowData[dr["ColName"].ToString()].ToString();
                     note = getnote(dr["Type"].ToString());
-                    sql += dr["fieldName"].ToString() + " = " + (chars.Contains(Type) ? "N" : "")  + note + RowData[dr["ColName"].ToString()].ToString() + note + ",";
+
+                    if (value == "" && note == "")
+                        continue;
+                    else if (value == "" && note == "'")
+                    {
+                        value = null;
+
+                    }
+
+
+                    sql += dr["fieldName"].ToString() + " = " + (value == null ? "NULL," : ((chars.Contains(Type) ? "N" : "") + note + value + note + ","));
                 }
             }
             sql = sql.Substring(0, sql.Length - 1);
-            return sql + where  ;
-            
+            return sql + where;
+
         }
         string PkName="";
         int PkType=-1;

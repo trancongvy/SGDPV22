@@ -47,6 +47,75 @@ namespace CDTLib
             strFilter = strFilter.Replace("True", "1");
             strFilter = strFilter.Replace("False", "0");
             strFilter = strFilter.Replace("0m", "0");
+            if (strFilter.Contains("IsOutlookIntervalNextWeek"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalNextWeek", "1 = dbo.IsOutlookIntervalNextWeek");
+            }
+            if (strFilter.Contains("IsOutlookIntervalBeyondThisYear"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalBeyondThisYear", "1 = dbo.IsOutlookIntervalBeyondThisYear");
+            }
+            if (strFilter.Contains("IsOutlookIntervalLaterThisYear"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalLaterThisYear", "1 = dbo.IsOutlookIntervalBeyondThisYear");
+            }
+            if (strFilter.Contains("IsOutlookIntervalLaterThisWeek"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalLaterThisWeek", "1 = dbo.IsOutlookIntervalLaterThisWeek");
+            }
+            if (strFilter.Contains("IsOutlookIntervalTomorrow"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalTomorrow", "1 = dbo.IsOutlookIntervalTomorrow");
+            }
+            if (strFilter.Contains("IsOutlookIntervalToday"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalToday", "1 = dbo.IsOutlookIntervalToday");
+            }
+            if (strFilter.Contains("IsOutlookIntervalYesterday"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalYesterday", "1 = dbo.IsOutlookIntervalYesterday");
+            }
+            if (strFilter.Contains("IsOutlookIntervalEarlierThisWeek"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalEarlierThisWeek", "1 = dbo.IsOutlookIntervalEarlierThisWeek");
+            }
+            if (strFilter.Contains("IsOutlookIntervalLastWeek"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalLastWeek", "1 = dbo.IsOutlookIntervalLastWeek");
+            }
+            if (strFilter.Contains("IsOutlookIntervalLaterThisMonth"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalLaterThisMonth", "1 = dbo.IsOutlookIntervalLaterThisMonth");
+            }
+            if (strFilter.Contains("IsOutlookIntervalEarlierThisMonth"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalEarlierThisMonth", "1 = dbo.IsOutlookIntervalEarlierThisMonth");
+            }
+            if (strFilter.Contains("IsOutlookIntervalEarlierThisYear"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalEarlierThisYear", "1 = dbo.IsOutlookIntervalEarlierThisYear");
+            }
+            if (strFilter.Contains("IsOutlookIntervalPriorThisYear"))
+            {
+                strFilter = strFilter.Replace("IsOutlookIntervalPriorThisYear", "1 = dbo.IsOutlookIntervalPriorThisYear");
+            }
+            if (strFilter.Contains("IsSameDay"))
+            {
+                strFilter = strFilter.Replace("IsSameDay", "1 = dbo.IsSameDay");
+            }
+            if (strFilter.Contains("IsThisMonth"))
+            {
+                strFilter = strFilter.Replace("IsThisMonth", "1 = dbo.IsThisMonth");
+            }
+            if (strFilter.Contains("IsThisWeek"))
+            {
+                strFilter = strFilter.Replace("IsThisWeek", "1 = dbo.IsThisWeek");
+            }
+            if (strFilter.Contains("IsThisYear"))
+            {
+                strFilter = strFilter.Replace("IsThisYear", "1 = dbo.IsThisYear");
+            }
+            
             if (strFilter.Contains("Between"))
                 UpdateBetweenOperator(ref strFilter);
             

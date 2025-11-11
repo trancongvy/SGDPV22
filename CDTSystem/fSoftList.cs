@@ -37,7 +37,7 @@ namespace CDTSystem
                 SimpleButton tb = new SimpleButton();
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\SGD\" + k);
                 try
-                { if (k.Substring(0, 3) == "CBA")
+                { if (k.Substring(0, 5) == "CBA22")
                     {
                         if (key.GetValue("CompanyName") == null) continue;
                         string CompanyName = key.GetValue("CompanyName").ToString();

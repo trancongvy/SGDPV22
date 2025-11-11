@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusAccounting", "CusAccount
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignWorkflow", "DesignWorkflow\DesignWorkflow.csproj", "{8E505B22-96F0-4085-A510-5BE535DD4D4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDT", "CDT\CDT.csproj", "{A48C0424-B640-40F9-9F72-9D96667B6160}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDT22", "CDT\CDT22.csproj", "{A48C0424-B640-40F9-9F72-9D96667B6160}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorManager", "ErrorManager\ErrorManager.csproj", "{87726715-C19D-44AD-9CA0-90097D40EB39}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusPOS", "CusPOS\CusPOS.csproj", "{058428FE-FA9F-4ECC-8CCF-012944D30806}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusCRM", "CusCRM\CusCRM.csproj", "{87A42332-9553-4725-8810-AC46A747ACEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMaintain", "DataMaintain\DataMaintain.csproj", "{867EB03B-CF1B-4590-8F71-343E259AF6C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{87A42332-9553-4725-8810-AC46A747ACEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87A42332-9553-4725-8810-AC46A747ACEB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{87A42332-9553-4725-8810-AC46A747ACEB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{867EB03B-CF1B-4590-8F71-343E259AF6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867EB03B-CF1B-4590-8F71-343E259AF6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867EB03B-CF1B-4590-8F71-343E259AF6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867EB03B-CF1B-4590-8F71-343E259AF6C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
